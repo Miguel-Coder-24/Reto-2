@@ -1,0 +1,69 @@
+classDiagram
+    Store --> Products
+    Store --> People
+    People --> Worker
+    People --> Clients
+    Worker <|-- Cashier
+    Worker <|-- Stocker
+    Worker <|-- Manager
+    Products <|-- Fruits
+    Products <|-- Medicine
+
+    class Store {
+        str name
+        bool isOpen()
+    }
+
+    class Products {
+        str name
+        int price
+        float weight
+        str expire()
+    }
+
+    class Fruits {
+        str color
+        str aroma
+        bool isFresh()
+    }
+
+    class Medicine {
+        str dosage
+        bool requiresPrescription()
+    }
+
+    class People {
+        str groupName
+        int countPeople()
+        void listMembers()
+    }
+
+    class Worker {
+        str name
+        int age
+        int salary
+        void work()
+    }
+
+    class Cashier {
+        void registerSale()
+    }
+
+    class Stocker {
+        void organizeShelf()
+    }
+
+    class Manager {
+        void evaluateWorker()
+    }
+
+    class Clients {
+        str name
+        str email
+        int age
+        bool membership
+        str shoppingCart
+        bool buy()
+        void addToCart(str product)
+        void viewCart()
+    }
